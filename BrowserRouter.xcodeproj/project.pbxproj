@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B398E20B1ED7EB9C002AD8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */; };
+		B398E20D1ED7EB9C002AD8AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E20C1ED7EB9C002AD8AC /* ViewController.swift */; };
+		B398E20F1ED7EB9C002AD8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */; };
+		B398E2121ED7EB9C002AD8AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B398E2101ED7EB9C002AD8AC /* Main.storyboard */; };
+		B398E21D1ED7EB9C002AD8AC /* BrowserRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E21C1ED7EB9C002AD8AC /* BrowserRouterTests.swift */; };
+		B398E2281ED7EB9C002AD8AC /* BrowserRouterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E2271ED7EB9C002AD8AC /* BrowserRouterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B398E2191ED7EB9C002AD8AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B398E1FF1ED7EB9C002AD8AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B398E2061ED7EB9C002AD8AC;
+			remoteInfo = BrowserRouter;
+		};
+		B398E2241ED7EB9C002AD8AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B398E1FF1ED7EB9C002AD8AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B398E2061ED7EB9C002AD8AC;
+			remoteInfo = BrowserRouter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B398E2071ED7EB9C002AD8AC /* BrowserRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B398E20C1ED7EB9C002AD8AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B398E2111ED7EB9C002AD8AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B398E2131ED7EB9C002AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B398E2181ED7EB9C002AD8AC /* BrowserRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowserRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B398E21C1ED7EB9C002AD8AC /* BrowserRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserRouterTests.swift; sourceTree = "<group>"; };
+		B398E21E1ED7EB9C002AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B398E2231ED7EB9C002AD8AC /* BrowserRouterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowserRouterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B398E2271ED7EB9C002AD8AC /* BrowserRouterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserRouterUITests.swift; sourceTree = "<group>"; };
+		B398E2291ED7EB9C002AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B398E2041ED7EB9C002AD8AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B398E2151ED7EB9C002AD8AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B398E2201ED7EB9C002AD8AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B398E1FE1ED7EB9C002AD8AC = {
+			isa = PBXGroup;
+			children = (
+				B398E2091ED7EB9C002AD8AC /* BrowserRouter */,
+				B398E21B1ED7EB9C002AD8AC /* BrowserRouterTests */,
+				B398E2261ED7EB9C002AD8AC /* BrowserRouterUITests */,
+				B398E2081ED7EB9C002AD8AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B398E2081ED7EB9C002AD8AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B398E2071ED7EB9C002AD8AC /* BrowserRouter.app */,
+				B398E2181ED7EB9C002AD8AC /* BrowserRouterTests.xctest */,
+				B398E2231ED7EB9C002AD8AC /* BrowserRouterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B398E2091ED7EB9C002AD8AC /* BrowserRouter */ = {
+			isa = PBXGroup;
+			children = (
+				B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */,
+				B398E20C1ED7EB9C002AD8AC /* ViewController.swift */,
+				B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */,
+				B398E2101ED7EB9C002AD8AC /* Main.storyboard */,
+				B398E2131ED7EB9C002AD8AC /* Info.plist */,
+			);
+			path = BrowserRouter;
+			sourceTree = "<group>";
+		};
+		B398E21B1ED7EB9C002AD8AC /* BrowserRouterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B398E21C1ED7EB9C002AD8AC /* BrowserRouterTests.swift */,
+				B398E21E1ED7EB9C002AD8AC /* Info.plist */,
+			);
+			path = BrowserRouterTests;
+			sourceTree = "<group>";
+		};
+		B398E2261ED7EB9C002AD8AC /* BrowserRouterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B398E2271ED7EB9C002AD8AC /* BrowserRouterUITests.swift */,
+				B398E2291ED7EB9C002AD8AC /* Info.plist */,
+			);
+			path = BrowserRouterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B398E2061ED7EB9C002AD8AC /* BrowserRouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B398E22C1ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouter" */;
+			buildPhases = (
+				B398E2031ED7EB9C002AD8AC /* Sources */,
+				B398E2041ED7EB9C002AD8AC /* Frameworks */,
+				B398E2051ED7EB9C002AD8AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrowserRouter;
+			productName = BrowserRouter;
+			productReference = B398E2071ED7EB9C002AD8AC /* BrowserRouter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B398E2171ED7EB9C002AD8AC /* BrowserRouterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B398E22F1ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouterTests" */;
+			buildPhases = (
+				B398E2141ED7EB9C002AD8AC /* Sources */,
+				B398E2151ED7EB9C002AD8AC /* Frameworks */,
+				B398E2161ED7EB9C002AD8AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B398E21A1ED7EB9C002AD8AC /* PBXTargetDependency */,
+			);
+			name = BrowserRouterTests;
+			productName = BrowserRouterTests;
+			productReference = B398E2181ED7EB9C002AD8AC /* BrowserRouterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B398E2221ED7EB9C002AD8AC /* BrowserRouterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B398E2321ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouterUITests" */;
+			buildPhases = (
+				B398E21F1ED7EB9C002AD8AC /* Sources */,
+				B398E2201ED7EB9C002AD8AC /* Frameworks */,
+				B398E2211ED7EB9C002AD8AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B398E2251ED7EB9C002AD8AC /* PBXTargetDependency */,
+			);
+			name = BrowserRouterUITests;
+			productName = BrowserRouterUITests;
+			productReference = B398E2231ED7EB9C002AD8AC /* BrowserRouterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B398E1FF1ED7EB9C002AD8AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Liang Zhao";
+				TargetAttributes = {
+					B398E2061ED7EB9C002AD8AC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = TNZ7HD8PFQ;
+						ProvisioningStyle = Automatic;
+					};
+					B398E2171ED7EB9C002AD8AC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = TNZ7HD8PFQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B398E2061ED7EB9C002AD8AC;
+					};
+					B398E2221ED7EB9C002AD8AC = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = TNZ7HD8PFQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B398E2061ED7EB9C002AD8AC;
+					};
+				};
+			};
+			buildConfigurationList = B398E2021ED7EB9C002AD8AC /* Build configuration list for PBXProject "BrowserRouter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B398E1FE1ED7EB9C002AD8AC;
+			productRefGroup = B398E2081ED7EB9C002AD8AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B398E2061ED7EB9C002AD8AC /* BrowserRouter */,
+				B398E2171ED7EB9C002AD8AC /* BrowserRouterTests */,
+				B398E2221ED7EB9C002AD8AC /* BrowserRouterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B398E2051ED7EB9C002AD8AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B398E20F1ED7EB9C002AD8AC /* Assets.xcassets in Resources */,
+				B398E2121ED7EB9C002AD8AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B398E2161ED7EB9C002AD8AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B398E2211ED7EB9C002AD8AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B398E2031ED7EB9C002AD8AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B398E20D1ED7EB9C002AD8AC /* ViewController.swift in Sources */,
+				B398E20B1ED7EB9C002AD8AC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B398E2141ED7EB9C002AD8AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B398E21D1ED7EB9C002AD8AC /* BrowserRouterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B398E21F1ED7EB9C002AD8AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B398E2281ED7EB9C002AD8AC /* BrowserRouterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B398E21A1ED7EB9C002AD8AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B398E2061ED7EB9C002AD8AC /* BrowserRouter */;
+			targetProxy = B398E2191ED7EB9C002AD8AC /* PBXContainerItemProxy */;
+		};
+		B398E2251ED7EB9C002AD8AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B398E2061ED7EB9C002AD8AC /* BrowserRouter */;
+			targetProxy = B398E2241ED7EB9C002AD8AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B398E2101ED7EB9C002AD8AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B398E2111ED7EB9C002AD8AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B398E22A1ED7EB9C002AD8AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B398E22B1ED7EB9C002AD8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		B398E22D1ED7EB9C002AD8AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = BrowserRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.BrowserRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B398E22E1ED7EB9C002AD8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = BrowserRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.BrowserRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B398E2301ED7EB9C002AD8AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = BrowserRouterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.BrowserRouterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrowserRouter.app/Contents/MacOS/BrowserRouter";
+			};
+			name = Debug;
+		};
+		B398E2311ED7EB9C002AD8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = BrowserRouterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.BrowserRouterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrowserRouter.app/Contents/MacOS/BrowserRouter";
+			};
+			name = Release;
+		};
+		B398E2331ED7EB9C002AD8AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = BrowserRouterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.BrowserRouterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BrowserRouter;
+			};
+			name = Debug;
+		};
+		B398E2341ED7EB9C002AD8AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
+				INFOPLIST_FILE = BrowserRouterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Amztion.BrowserRouterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BrowserRouter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B398E2021ED7EB9C002AD8AC /* Build configuration list for PBXProject "BrowserRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B398E22A1ED7EB9C002AD8AC /* Debug */,
+				B398E22B1ED7EB9C002AD8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B398E22C1ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B398E22D1ED7EB9C002AD8AC /* Debug */,
+				B398E22E1ED7EB9C002AD8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B398E22F1ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B398E2301ED7EB9C002AD8AC /* Debug */,
+				B398E2311ED7EB9C002AD8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B398E2321ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B398E2331ED7EB9C002AD8AC /* Debug */,
+				B398E2341ED7EB9C002AD8AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B398E1FF1ED7EB9C002AD8AC /* Project object */;
+}
