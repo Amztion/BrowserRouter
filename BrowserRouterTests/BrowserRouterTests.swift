@@ -33,4 +33,7 @@ class BrowserRouterTests: XCTestCase {
         }
     }
     
+    func testWildCardPatternMatch() {
+        
+    }
 }

@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89628CDB18D4B403462592BF /* Pods_BrowserRouter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA0B2827CB358B52F17096C /* Pods_BrowserRouter.framework */; };
 		B398E20B1ED7EB9C002AD8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */; };
 		B398E20D1ED7EB9C002AD8AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E20C1ED7EB9C002AD8AC /* ViewController.swift */; };
 		B398E20F1ED7EB9C002AD8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */; };
 		B398E2121ED7EB9C002AD8AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B398E2101ED7EB9C002AD8AC /* Main.storyboard */; };
 		B398E21D1ED7EB9C002AD8AC /* BrowserRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E21C1ED7EB9C002AD8AC /* BrowserRouterTests.swift */; };
 		B398E2281ED7EB9C002AD8AC /* BrowserRouterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E2271ED7EB9C002AD8AC /* BrowserRouterUITests.swift */; };
+		B398E2371ED81755002AD8AC /* BrowserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E2361ED81754002AD8AC /* BrowserManager.swift */; };
+		B3B3DB761EE1C9DC0027210E /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3DB751EE1C9DC0027210E /* Browser.swift */; };
+		B3B3DB781EE1CB5D0027210E /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3DB771EE1CB5D0027210E /* Route.swift */; };
+		B3B3DB7A1EE270C40027210E /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3DB791EE270C40027210E /* RouteManager.swift */; };
+		C4F047076340924517CCA8DC /* Pods_BrowserRouterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AF965232F873E6E32C8E6A /* Pods_BrowserRouterTests.framework */; };
+		FE94953A9947DB3AB4A7FED1 /* Pods_BrowserRouterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC5EF0DE2A18722CC613F3D /* Pods_BrowserRouterUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06ABE426C67EC73B9F1C8F45 /* Pods-BrowserRouter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserRouter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserRouter/Pods-BrowserRouter.debug.xcconfig"; sourceTree = "<group>"; };
+		521104894599FC8EC4D07B4A /* Pods-BrowserRouterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserRouterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserRouterTests/Pods-BrowserRouterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA93C9C2754CD74D63D71A69 /* Pods-BrowserRouterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserRouterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserRouterUITests/Pods-BrowserRouterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AAC5EF0DE2A18722CC613F3D /* Pods_BrowserRouterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrowserRouterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACA0B2827CB358B52F17096C /* Pods_BrowserRouter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrowserRouter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B398E2071ED7EB9C002AD8AC /* BrowserRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B398E20C1ED7EB9C002AD8AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +57,15 @@
 		B398E2231ED7EB9C002AD8AC /* BrowserRouterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowserRouterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B398E2271ED7EB9C002AD8AC /* BrowserRouterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserRouterUITests.swift; sourceTree = "<group>"; };
 		B398E2291ED7EB9C002AD8AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B398E2351ED7ED55002AD8AC /* BrowserRouter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrowserRouter.entitlements; sourceTree = "<group>"; };
+		B398E2361ED81754002AD8AC /* BrowserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserManager.swift; sourceTree = "<group>"; };
+		B3B3DB751EE1C9DC0027210E /* Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
+		B3B3DB771EE1CB5D0027210E /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		B3B3DB791EE270C40027210E /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
+		B7E1C9453375C6B0E170803D /* Pods-BrowserRouterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserRouterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserRouterTests/Pods-BrowserRouterTests.release.xcconfig"; sourceTree = "<group>"; };
+		DA8C824CC1B26D7DEE2703C2 /* Pods-BrowserRouterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserRouterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserRouterUITests/Pods-BrowserRouterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E5AF965232F873E6E32C8E6A /* Pods_BrowserRouterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrowserRouterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBEF9E3F76EC3D2684D5F66C /* Pods-BrowserRouter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrowserRouter.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrowserRouter/Pods-BrowserRouter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89628CDB18D4B403462592BF /* Pods_BrowserRouter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4F047076340924517CCA8DC /* Pods_BrowserRouterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,12 +89,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE94953A9947DB3AB4A7FED1 /* Pods_BrowserRouterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B06A3CCD9B280F9C8A45BDFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06ABE426C67EC73B9F1C8F45 /* Pods-BrowserRouter.debug.xcconfig */,
+				EBEF9E3F76EC3D2684D5F66C /* Pods-BrowserRouter.release.xcconfig */,
+				521104894599FC8EC4D07B4A /* Pods-BrowserRouterTests.debug.xcconfig */,
+				B7E1C9453375C6B0E170803D /* Pods-BrowserRouterTests.release.xcconfig */,
+				AA93C9C2754CD74D63D71A69 /* Pods-BrowserRouterUITests.debug.xcconfig */,
+				DA8C824CC1B26D7DEE2703C2 /* Pods-BrowserRouterUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B398E1FE1ED7EB9C002AD8AC = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +116,8 @@
 				B398E21B1ED7EB9C002AD8AC /* BrowserRouterTests */,
 				B398E2261ED7EB9C002AD8AC /* BrowserRouterUITests */,
 				B398E2081ED7EB9C002AD8AC /* Products */,
+				B06A3CCD9B280F9C8A45BDFE /* Pods */,
+				CAAEBF62E51F93D654136E34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,7 +134,12 @@
 		B398E2091ED7EB9C002AD8AC /* BrowserRouter */ = {
 			isa = PBXGroup;
 			children = (
+				B398E2351ED7ED55002AD8AC /* BrowserRouter.entitlements */,
 				B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */,
+				B398E2361ED81754002AD8AC /* BrowserManager.swift */,
+				B3B3DB751EE1C9DC0027210E /* Browser.swift */,
+				B3B3DB791EE270C40027210E /* RouteManager.swift */,
+				B3B3DB771EE1CB5D0027210E /* Route.swift */,
 				B398E20C1ED7EB9C002AD8AC /* ViewController.swift */,
 				B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */,
 				B398E2101ED7EB9C002AD8AC /* Main.storyboard */,
@@ -122,6 +166,16 @@
 			path = BrowserRouterUITests;
 			sourceTree = "<group>";
 		};
+		CAAEBF62E51F93D654136E34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACA0B2827CB358B52F17096C /* Pods_BrowserRouter.framework */,
+				E5AF965232F873E6E32C8E6A /* Pods_BrowserRouterTests.framework */,
+				AAC5EF0DE2A18722CC613F3D /* Pods_BrowserRouterUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B398E22C1ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouter" */;
 			buildPhases = (
+				F0C7CD11F54B2D28171860EB /* [CP] Check Pods Manifest.lock */,
 				B398E2031ED7EB9C002AD8AC /* Sources */,
 				B398E2041ED7EB9C002AD8AC /* Frameworks */,
 				B398E2051ED7EB9C002AD8AC /* Resources */,
+				4C735C25F9728266B99B883B /* [CP] Embed Pods Frameworks */,
+				EC9AF14432595E32AFC5AA4F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B398E22F1ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouterTests" */;
 			buildPhases = (
+				6E3E417E08C1BF117A9E2FCA /* [CP] Check Pods Manifest.lock */,
 				B398E2141ED7EB9C002AD8AC /* Sources */,
 				B398E2151ED7EB9C002AD8AC /* Frameworks */,
 				B398E2161ED7EB9C002AD8AC /* Resources */,
+				20CB704BF213BE0F85CD4256 /* [CP] Embed Pods Frameworks */,
+				57AD310A5E432E48907EB642 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B398E2321ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouterUITests" */;
 			buildPhases = (
+				AB1A46F2A1DC9E6DDD522951 /* [CP] Check Pods Manifest.lock */,
 				B398E21F1ED7EB9C002AD8AC /* Sources */,
 				B398E2201ED7EB9C002AD8AC /* Frameworks */,
 				B398E2211ED7EB9C002AD8AC /* Resources */,
+				7DABFC40E6F3EFB3FBA322A5 /* [CP] Embed Pods Frameworks */,
+				267E67FA0AB7C305E70CD959 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +255,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = TNZ7HD8PFQ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					B398E2171ED7EB9C002AD8AC = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -253,13 +321,155 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20CB704BF213BE0F85CD4256 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrowserRouterTests/Pods-BrowserRouterTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		267E67FA0AB7C305E70CD959 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrowserRouterUITests/Pods-BrowserRouterUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C735C25F9728266B99B883B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrowserRouter/Pods-BrowserRouter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57AD310A5E432E48907EB642 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrowserRouterTests/Pods-BrowserRouterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E3E417E08C1BF117A9E2FCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7DABFC40E6F3EFB3FBA322A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrowserRouterUITests/Pods-BrowserRouterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB1A46F2A1DC9E6DDD522951 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC9AF14432595E32AFC5AA4F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrowserRouter/Pods-BrowserRouter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0C7CD11F54B2D28171860EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B398E2031ED7EB9C002AD8AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B3DB761EE1C9DC0027210E /* Browser.swift in Sources */,
+				B398E2371ED81755002AD8AC /* BrowserManager.swift in Sources */,
+				B3B3DB7A1EE270C40027210E /* RouteManager.swift in Sources */,
 				B398E20D1ED7EB9C002AD8AC /* ViewController.swift in Sources */,
 				B398E20B1ED7EB9C002AD8AC /* AppDelegate.swift in Sources */,
+				B3B3DB781EE1CB5D0027210E /* Route.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,8 +610,10 @@
 		};
 		B398E22D1ED7EB9C002AD8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06ABE426C67EC73B9F1C8F45 /* Pods-BrowserRouter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BrowserRouter/BrowserRouter.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
 				INFOPLIST_FILE = BrowserRouter/Info.plist;
@@ -414,8 +626,10 @@
 		};
 		B398E22E1ED7EB9C002AD8AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBEF9E3F76EC3D2684D5F66C /* Pods-BrowserRouter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BrowserRouter/BrowserRouter.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = TNZ7HD8PFQ;
 				INFOPLIST_FILE = BrowserRouter/Info.plist;
@@ -428,6 +642,7 @@
 		};
 		B398E2301ED7EB9C002AD8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 521104894599FC8EC4D07B4A /* Pods-BrowserRouterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -444,6 +659,7 @@
 		};
 		B398E2311ED7EB9C002AD8AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7E1C9453375C6B0E170803D /* Pods-BrowserRouterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,6 +676,7 @@
 		};
 		B398E2331ED7EB9C002AD8AC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA93C9C2754CD74D63D71A69 /* Pods-BrowserRouterUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -475,6 +692,7 @@
 		};
 		B398E2341ED7EB9C002AD8AC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA8C824CC1B26D7DEE2703C2 /* Pods-BrowserRouterUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -507,6 +725,7 @@
 				B398E22E1ED7EB9C002AD8AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B398E22F1ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouterTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +734,7 @@
 				B398E2311ED7EB9C002AD8AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B398E2321ED7EB9C002AD8AC /* Build configuration list for PBXNativeTarget "BrowserRouterUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +743,7 @@
 				B398E2341ED7EB9C002AD8AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
