@@ -9,7 +9,9 @@
 import Cocoa
 
 class Browser {
-    init(_ bundle: Bundle) {
-        
+    public let handler: CFString
+    
+    init(_ bundle: Bundle, handler: CFString) {
+        self.handler = handler
     }
 }
