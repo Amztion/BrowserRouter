@@ -39,4 +39,8 @@ class WildCardURL {
             return nil
         }
     }
+    
+    func match(_ url: String) -> Bool {
+        return self.regex.match(url)
+    }
 }

@@ -9,9 +9,13 @@
 import Cocoa
 
 class Browser {
-    public let handler: CFString
+    public let handlerIdentifier: String
+    public let bundle: Bundle
+    public var icon: NSImage?
+    public var name: String!
     
-    init(_ bundle: Bundle, handler: CFString) {
-        self.handler = handler
+    init(bundle: Bundle, handlerIdentifier: String) {
+        self.handlerIdentifier = handlerIdentifier
+        self.bundle = bundle
     }
 }

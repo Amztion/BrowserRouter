@@ -20,7 +20,7 @@ class Regex {
         }
     }
     
-    func match(pattern: String) -> Bool {
+    func match(_ pattern: String) -> Bool {
         return self.regularExpression.matches(in: pattern, options: .anchored, range: NSRange(location: 0, length: pattern.characters.count)).count > 0
     }
 }

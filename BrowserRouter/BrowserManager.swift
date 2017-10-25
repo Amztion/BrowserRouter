@@ -15,19 +15,22 @@ class BrowserManager {
         return sharedInstance
     }
     
-    static public func allInstalledBrowsers() -> [Bundle] {
+    static public func allInstalledBrowsers() -> [Browser] {
         let handlers = LSCopyAllHandlersForURLScheme("http" as CFString)?.takeRetainedValue()
         
-        var bundles = [Bundle]()
+        var browsers = [Browser]()
         for index in 0..<CFArrayGetCount(handlers) {
             let handlerIdentifier = unsafeBitCast(CFArrayGetValueAtIndex(handlers, index), to: CFString.self) as String
             if let path = NSWorkspace.shared().absolutePathForApplication(withBundleIdentifier: handlerIdentifier) {
-                if let bundle = Bundle(path: path) {
-                    bundles.append(bundle)
+                if let bundle = Bundle(url: URL(fileURLWithPath: path)) {
+                    let browser = Browser(bundle: bundle, handlerIdentifier: handlerIdentifier)
+                    browser.icon = NSWorkspace.shared().icon(forFile: path)
+                    browser.name = (path as NSString).lastPathComponent
+                    browsers.append(browser)
                 }
             }
         }
         
-        return bundles
+        return browsers
     }
 }
