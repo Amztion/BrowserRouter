@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B3829E861F05FEE500C30211 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3829E851F05FEE500C30211 /* Regex.swift */; };
-		B3829E881F065F2300C30211 /* WildCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3829E871F065F2300C30211 /* WildCard.swift */; };
+		B3829E881F065F2300C30211 /* Wildcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3829E871F065F2300C30211 /* Wildcard.swift */; };
 		B398E20B1ED7EB9C002AD8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */; };
 		B398E20D1ED7EB9C002AD8AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E20C1ED7EB9C002AD8AC /* ViewController.swift */; };
 		B398E20F1ED7EB9C002AD8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */; };
@@ -17,8 +17,8 @@
 		B398E2281ED7EB9C002AD8AC /* BrowserRouterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E2271ED7EB9C002AD8AC /* BrowserRouterUITests.swift */; };
 		B398E2371ED81755002AD8AC /* BrowserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E2361ED81754002AD8AC /* BrowserManager.swift */; };
 		B3B3DB761EE1C9DC0027210E /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3DB751EE1C9DC0027210E /* Browser.swift */; };
-		B3B3DB781EE1CB5D0027210E /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3DB771EE1CB5D0027210E /* Route.swift */; };
-		B3B3DB7A1EE270C40027210E /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3DB791EE270C40027210E /* RouteManager.swift */; };
+		B3D730F51FA0AE310007605C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D730F41FA0AE310007605C /* Route.swift */; };
+		B3D730F71FA0D7840007605C /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D730F61FA0D7840007605C /* RouteManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		B3829E851F05FEE500C30211 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		B3829E871F065F2300C30211 /* WildCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WildCard.swift; sourceTree = "<group>"; };
+		B3829E871F065F2300C30211 /* Wildcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wildcard.swift; sourceTree = "<group>"; };
 		B398E2071ED7EB9C002AD8AC /* BrowserRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B398E20C1ED7EB9C002AD8AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		B398E2351ED7ED55002AD8AC /* BrowserRouter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrowserRouter.entitlements; sourceTree = "<group>"; };
 		B398E2361ED81754002AD8AC /* BrowserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowserManager.swift; sourceTree = "<group>"; };
 		B3B3DB751EE1C9DC0027210E /* Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
-		B3B3DB771EE1CB5D0027210E /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
-		B3B3DB791EE270C40027210E /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
+		B3D730F41FA0AE310007605C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		B3D730F61FA0D7840007605C /* RouteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,9 +113,9 @@
 				B398E2361ED81754002AD8AC /* BrowserManager.swift */,
 				B3B3DB751EE1C9DC0027210E /* Browser.swift */,
 				B3829E851F05FEE500C30211 /* Regex.swift */,
-				B3829E871F065F2300C30211 /* WildCard.swift */,
-				B3B3DB791EE270C40027210E /* RouteManager.swift */,
-				B3B3DB771EE1CB5D0027210E /* Route.swift */,
+				B3829E871F065F2300C30211 /* Wildcard.swift */,
+				B3D730F41FA0AE310007605C /* Route.swift */,
+				B3D730F61FA0D7840007605C /* RouteManager.swift */,
 				B398E20C1ED7EB9C002AD8AC /* ViewController.swift */,
 				B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */,
 				B398E2101ED7EB9C002AD8AC /* Main.storyboard */,
@@ -285,12 +285,12 @@
 			files = (
 				B3B3DB761EE1C9DC0027210E /* Browser.swift in Sources */,
 				B398E2371ED81755002AD8AC /* BrowserManager.swift in Sources */,
-				B3B3DB7A1EE270C40027210E /* RouteManager.swift in Sources */,
-				B3829E881F065F2300C30211 /* WildCard.swift in Sources */,
+				B3829E881F065F2300C30211 /* Wildcard.swift in Sources */,
+				B3D730F71FA0D7840007605C /* RouteManager.swift in Sources */,
 				B3829E861F05FEE500C30211 /* Regex.swift in Sources */,
 				B398E20D1ED7EB9C002AD8AC /* ViewController.swift in Sources */,
 				B398E20B1ED7EB9C002AD8AC /* AppDelegate.swift in Sources */,
-				B3B3DB781EE1CB5D0027210E /* Route.swift in Sources */,
+				B3D730F51FA0AE310007605C /* Route.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

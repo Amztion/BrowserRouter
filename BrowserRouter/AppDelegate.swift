@@ -10,12 +10,14 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        let safari = BrowserManager.shared().all.filter{$0.identifier == "com.apple.Safari"}.first!
+        BrowserManager.shared().default = safari
+        
+        let chrome = BrowserManager.shared().all.filter{$0.identifier == "com.google.Chrome"}.first!
+        let wildcards = [Wildcard(url: "*google.com*")]
+        let chromeRoute = Route(browser: chrome, wildcards: wildcards as! [Wildcard])
+        RouteManager.shared().add(chromeRoute)
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
@@ -25,11 +27,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func handleURLEvent(_ event: NSAppleEventDescriptor, _ reply: NSAppleEventDescriptor) {
         if let urlString = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue {
-            if let url = URL(string: urlString) {
-                for bundle in BrowserController.allInstalledBrowsers() {
-                    print("\(bundle)/n")
-                }
-            }
+            let browser = (RouteManager.shared().matched(with: urlString)?.browser ?? BrowserManager.shared().default)!
+            
+            browser.open(urlString)
         }
     }
 

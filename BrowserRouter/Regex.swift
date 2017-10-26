@@ -8,11 +8,10 @@
 
 import Cocoa
 
-class Regex {
+struct Regex {
     private let regularExpression: NSRegularExpression
     
     init?(pattern: String) {
-        
         if let `regularExpression` = try? NSRegularExpression(pattern: pattern, options: .anchorsMatchLines) {
             self.regularExpression = regularExpression
         } else {

@@ -8,14 +8,18 @@
 
 import Cocoa
 
-class Browser {
-    public let handlerIdentifier: String
+struct Browser {
+    public let identifier: String
     public let bundle: Bundle
     public var icon: NSImage?
     public var name: String!
     
-    init(bundle: Bundle, handlerIdentifier: String) {
-        self.handlerIdentifier = handlerIdentifier
+    init(bundle: Bundle, identifier: String) {
+        self.identifier = identifier
         self.bundle = bundle
+    }
+    
+    func open(_ url: String) {
+        NSWorkspace.shared().open([URL(string: url)!], withAppBundleIdentifier: identifier, options: [], additionalEventParamDescriptor: nil, launchIdentifiers: nil)
     }
 }

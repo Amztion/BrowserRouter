@@ -2,21 +2,26 @@
 //  Route.swift
 //  BrowserRouter
 //
-//  Created by Liang Zhao on 2017/6/3.
+//  Created by Liang Zhao on 2017/10/25.
 //  Copyright © 2017年 Liang Zhao. All rights reserved.
 //
 
 import Cocoa
 
-class Route {
-    var defaultBrowser: Browser
-    var link: String
+struct Route {
+    let browser: Browser
+    let wildcards: [Wildcard]
     
-    var uts: Int64
+    init(browser: Browser, wildcards: [Wildcard]) {
+        self.browser = browser
+        self.wildcards = wildcards
+    }
     
-    init?(browser: Browser, link: String) {
-        self.link = link
-        self.defaultBrowser = browser
-        self.uts = Int64(Int(NSDate().timeIntervalSince1970))
+    func match(_ url: String) -> Bool {
+        return self.wildcards.filter {$0.match(url)}.count > 0
+    }
+    
+    func identifier() -> String {
+        return browser.identifier
     }
 }

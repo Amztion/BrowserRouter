@@ -1,5 +1,5 @@
 //
-//  WildCard.swift
+//  Wildcard.swift
 //  BrowserRouter
 //
 //  Created by Liang Zhao on 2017/6/30.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class WildCardURL {
+struct Wildcard {
     private let url: String
     let regex: Regex
     let charactersMap = [
