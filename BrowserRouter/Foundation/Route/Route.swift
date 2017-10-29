@@ -21,7 +21,13 @@ struct Route {
         return self.wildcards.filter {$0.match(url)}.count > 0
     }
     
-    func identifier() -> String {
+    var identifier: String {
         return browser.identifier
+    }
+}
+
+extension Route: Equatable {
+    static func ==(lhs: Route, rhs: Route) -> Bool {
+        return lhs.identifier == rhs.identifier
     }
 }

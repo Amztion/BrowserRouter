@@ -18,17 +18,25 @@ class RouteManager: NSObject {
     }
     
     func add(_ route: Route) {
+        guard index(of: route) == nil else {
+            print("The route has already been exist.")
+            return;
+        }
+        
         routes.append(route)
     }
     
     func remove(_ route: Route) throws {
-        if let index = routes.index(where: {$0.identifier() == route.identifier()}) {
+        if let index = index(of: route) {
             routes.remove(at: index)
         } else {
             //TODO: Throws Error
         }
     }
     
+    func index(of route: Route) -> Int? {
+        return routes.index {$0 == route}
+    }
     
     func matched(with url: String) -> Route? {
         return routes.filter{$0.match(url)}.first
