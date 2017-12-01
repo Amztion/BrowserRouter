@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Liang Zhao. All rights reserved.
 //
 
-import Foundation
+import Cocoa
 
 extension URL {
     struct Scheme {
@@ -23,6 +23,12 @@ extension Browser {
 }
 
 extension RouteTableCellView {
+    struct CellViewIdentifier {
+        static let RouteList = "RouteList"
+    }
+}
+
+extension RouteContentListTableCellView {
     struct CellViewIdentifier {
         static let RouteList = "RouteList"
     }

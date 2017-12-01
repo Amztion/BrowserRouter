@@ -17,12 +17,12 @@ struct Browser {
     init(bundle: Bundle, identifier: String) {
         self.identifier = identifier
         self.bundle = bundle
-        icon = NSWorkspace.shared().icon(forFile: bundle.bundlePath)
+        icon = NSWorkspace.shared.icon(forFile: bundle.bundlePath)
         name = (bundle.bundlePath as NSString).lastPathComponent
     }
     
     func open(_ url: String) {
-        NSWorkspace.shared().open([URL(string: url)!], withAppBundleIdentifier: identifier, options: [], additionalEventParamDescriptor: nil, launchIdentifiers: nil)
+        NSWorkspace.shared.open([URL(string: url)!], withAppBundleIdentifier: identifier, options: [], additionalEventParamDescriptor: nil, launchIdentifiers: nil)
     }
 }
 
@@ -39,7 +39,7 @@ extension Browser {
         var browsers = [Browser]()
         for index in 0..<CFArrayGetCount(handlers) {
             let handlerIdentifier = unsafeBitCast(CFArrayGetValueAtIndex(handlers, index), to: CFString.self) as String
-            if let path = NSWorkspace.shared().absolutePathForApplication(withBundleIdentifier: handlerIdentifier) {
+            if let path = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: handlerIdentifier) {
                 if let bundle = Bundle(url: URL(fileURLWithPath: path)) {
                     browsers.append(Browser(bundle: bundle, identifier: handlerIdentifier))
                 }

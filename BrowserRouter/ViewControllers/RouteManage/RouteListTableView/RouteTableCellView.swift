@@ -9,12 +9,6 @@
 import Cocoa
 
 class RouteTableCellView: NSTableCellView {
-
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        // Drawing code here.
-    }
     
     func set(item: RouteTableItem) {
         imageView?.image = item.image

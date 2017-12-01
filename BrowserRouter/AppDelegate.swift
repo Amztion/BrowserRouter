@@ -11,27 +11,35 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
-        let chrome = Browser.all.filter{$0.identifier == Browser.Identifier.chrome}.first!
-        let wildcards = [Wildcard(url: "google.com")]
-        
-        let chromeRoute = Route(browser: chrome, wildcards: wildcards as! [Wildcard])
-        RouteManager.shared().add(chromeRoute)
+        launchRouteManageWindowController()
     }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(handleURLEvent(_:_:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+        
+        NSApplication.shared.setActivationPolicy(.accessory)
+        RouteManager.shared.add(chromeRoute)
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        launchRouteManageWindowController()
         return true
     }
 }
 
 extension AppDelegate {
-    func handleURLEvent(_ event: NSAppleEventDescriptor, _ reply: NSAppleEventDescriptor) {
+    @objc func handleURLEvent(_ event: NSAppleEventDescriptor, _ reply: NSAppleEventDescriptor) {
         if let urlString = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue {
-            (RouteManager.shared().matched(with: urlString)?.browser ?? Browser.default).open(urlString)
+            (RouteManager.shared.matched(with: urlString)?.browser ?? Browser.default).open(urlString)
         }
+    }
+    
+    fileprivate func launchRouteManageWindowController() {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        
+        let mainWindowController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "RouteManageWindowController")) as! NSWindowController
+        
+        mainWindowController.showWindow(self)
     }
 }
 

@@ -20,7 +20,7 @@ struct Regex {
     }
     
     func match(_ pattern: String) -> Bool {
-        return self.regularExpression.matches(in: pattern, options: .anchored, range: NSRange(location: 0, length: pattern.characters.count)).count > 0
+        return self.regularExpression.matches(in: pattern, options: .anchored, range: NSRange(location: 0, length: pattern.count)).count > 0
     }
 }
 

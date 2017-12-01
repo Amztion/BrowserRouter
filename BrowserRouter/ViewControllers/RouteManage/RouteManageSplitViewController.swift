@@ -14,12 +14,11 @@ class RouteManageSplitViewController: NSSplitViewController {
         super.viewDidLoad()
         
         configSplitView()
+        
+        mainStore.dispatch(RouteListLoadAction(routes: nil))
     }
     
-}
-
-extension RouteManageSplitViewController {
     fileprivate func configSplitView() {
-        splitView.setPosition(self.splitView.frame.size.width * 1.0/3.0, ofDividerAt: 0)
+        splitView.setPosition(splitView.frame.size.width * 1.0/3.0, ofDividerAt: 0)
     }
 }
