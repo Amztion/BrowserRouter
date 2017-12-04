@@ -21,19 +21,19 @@ let RouteReducer: Reducer<RouteState> = { action, state -> RouteState in
     case let action as RouteListSelectAction:
         return RouteListSelectActionReducer(action, state)
     default:
-        return RouteState(routes: [Route](), selectedIndex: 0)
+        return RouteState(routes: EmptyRouteList, selectedIndex: NonselectedIndex)
     }
 }
 
 fileprivate let RouteListLoadActionReducer: Reducer<RouteState> = { action, state -> RouteState in
     let loadAction = action as! RouteListLoadAction
     
-    return RouteState(routes: loadAction.routes ?? [Route](), selectedIndex: nil)
+    return RouteState(routes: loadAction.routes , selectedIndex: NonselectedIndex)
 }
 
 fileprivate let RouteListRemoveActionReducer: Reducer<RouteState> = { action, state -> RouteState in
     guard var routes = state?.routes else {
-        return RouteState(routes: [Route](), selectedIndex: nil)
+        return RouteState(routes: EmptyRouteList, selectedIndex: NonselectedIndex)
     }
     
     let removeAction = action as! RouteListRemoveAction
@@ -43,7 +43,7 @@ fileprivate let RouteListRemoveActionReducer: Reducer<RouteState> = { action, st
     
     routes.remove(at: removedIndex)
     
-    var selectedIndex: Int?
+    var selectedIndex = NonselectedIndex
     
     if let lastSelectedIndex = state?.selectedIndex {
         if lastSelectedIndex < removedIndex {
@@ -60,7 +60,7 @@ fileprivate let RouteListAddActionReducer: Reducer<RouteState> = { action, state
     let addAction = action as! RouteListAddAction
     let addedRoute = addAction.route
     
-    var routes = state?.routes ?? [Route]()
+    var routes = state?.routes ?? EmptyRouteList
     routes.append(addedRoute)
     
     return RouteState(routes: routes, selectedIndex: routes.count - 1)
@@ -71,13 +71,20 @@ fileprivate let RouteListModifyActionReducer: Reducer<RouteState> = { action, st
     let modifiedRoute = modifiedAction.route
     let modifiedIndex = modifiedAction.index
     
-
-    return RouteState(routes: state?.routes ?? [Route](), selectedIndex: modifiedIndex)
+    var routes = EmptyRouteList
+    
+    if var stateRoutes = state?.routes  {
+        stateRoutes.remove(at: modifiedIndex)
+        stateRoutes.insert(modifiedRoute, at: modifiedIndex)
+        routes = stateRoutes
+    }
+    
+    return RouteState(routes: routes, selectedIndex: modifiedIndex)
 }
 
 fileprivate let RouteListSelectActionReducer: Reducer<RouteState> = { action, state in
     let selectAction = action as! RouteListSelectAction
     let selectedIndex = selectAction.index
     
-    return RouteState(routes: state?.routes ?? [Route](), selectedIndex: selectedIndex)
+    return RouteState(routes: state?.routes ?? EmptyRouteList, selectedIndex: selectedIndex)
 }

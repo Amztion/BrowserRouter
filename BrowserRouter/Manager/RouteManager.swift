@@ -14,7 +14,7 @@ class RouteManager: NSObject {
         return _routes
     }
     
-    private var _routes = [Route]()
+    private var _routes = Route.emptyList
     
     func add(_ route: Route) {
         add(route, at: _routes.count)
@@ -36,17 +36,24 @@ class RouteManager: NSObject {
     
     func remove(_ route: Route) throws {
         if let index = index(of: route) {
-            _routes.remove(at: index)
+            try remove(at: index)
         } else {
             //TODO: Throws Error
         }
     }
     
-    func replace(_ route: Route) throws {
-        if let index = index(of: route) {
-            try remove(route)
-            add(route, at: index)
+    func remove(at index: Int) throws {
+        guard index < _routes.count else {
+            // TODO: Throws Error
+            return
         }
+        
+        _routes.remove(at: index)
+    }
+    
+    func replace(_ route: Route, at index: Int) throws {
+        try remove(at: index)
+        add(route, at: index)
     }
     
     func index(of route: Route) -> Int? {

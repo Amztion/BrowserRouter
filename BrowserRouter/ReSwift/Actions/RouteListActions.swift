@@ -9,7 +9,7 @@
 import ReSwift
 
 struct RouteListLoadAction: Action {
-    var routes: [Route]?
+    var routes: [Route]
 }
 
 struct RouteListRemoveAction: Action {

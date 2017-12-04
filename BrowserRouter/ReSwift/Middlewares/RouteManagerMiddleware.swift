@@ -37,7 +37,8 @@ let RouteManagerMiddleware: Middleware<RouteState> = { dispatch, getState in
 
 extension RouteManager {
     func handle(_ loadAction: RouteListLoadAction) -> RouteListLoadAction {
-        return RouteListLoadAction(routes: [chromeRoute])
+        // TODO: Read from database
+        return RouteListLoadAction(routes: RouteManager.shared.routes)
     }
     
     func handle(_ removeAction: RouteListRemoveAction) -> RouteListRemoveAction {
@@ -63,8 +64,9 @@ extension RouteManager {
     
     func handle(_ modifyAction: RouteListModifyAction) -> RouteListModifyAction {
         let modifiedRoute = modifyAction.route
+        let modifiedIndex = modifyAction.index
         
-        try? RouteManager.shared.replace(modifiedRoute)
+        try? RouteManager.shared.replace(modifiedRoute, at: modifiedIndex)
         
         return modifyAction
     }

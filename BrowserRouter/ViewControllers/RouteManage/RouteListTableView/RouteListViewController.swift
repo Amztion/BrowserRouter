@@ -17,7 +17,9 @@ class RouteListViewController: NSViewController {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var segmentedControl: NSSegmentedControl!
     
-    private var routeList = [Route]()
+    private var routeList = Route.emptyList
+    
+    private var previoudSelectedIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +49,17 @@ class RouteListViewController: NSViewController {
 
 extension RouteListViewController {
     fileprivate func updateSegmentedControl() {
-        let enabled = !(tableView.selectedRow == -1)
-        
-        segmentedControl.setEnabled(enabled, forSegment: SegmentedControlIndex.remove.rawValue)
+        segmentedControl.setEnabled(!(tableView.selectedRow == -1), forSegment: SegmentedControlIndex.remove.rawValue)
     }
     
     func add() {
-        mainStore.dispatch(RouteListAddAction(route: Route(browser: Browser.all.first!, wildcards: [Wildcard]())))
+        mainStore.dispatch(RouteListAddAction(route: Route(browser: Browser.all.first!, wildcards: EmptyWildcard)))
     }
     
     func remove() {
         let selectedIndex = tableView.selectedRow
         
-        if selectedIndex > -1 {
+        if selectedIndex != NonselectedIndex {
             mainStore.dispatch(RouteListRemoveAction(route: routeList[selectedIndex], index: selectedIndex))
         }
     }
@@ -72,9 +72,8 @@ extension RouteListViewController: StoreSubscriber {
         routeList = state.routes
         tableView.reloadData()
   
-        if let selectedIndex = state.selectedIndex {
-            tableView.selectRowIndexes(IndexSet(integer: selectedIndex), byExtendingSelection: false)
-            updateSegmentedControl()
+        if state.selectedIndex != NonselectedIndex {
+            tableView.selectRowIndexes(IndexSet(integer: state.selectedIndex), byExtendingSelection: false)
         }
     }
 }
@@ -85,12 +84,14 @@ extension RouteListViewController: NSTableViewDelegate {
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-        let selectedRow = (notification.object as! NSTableView).selectedRow
-        
-        if self.tableView.selectedRow != selectedRow {
-            mainStore.dispatch(RouteListSelectAction(route: RouteManager.shared.routes[selectedRow], index: selectedRow))
-            updateSegmentedControl()
+        if previoudSelectedIndex != tableView.selectedRow {
+            previoudSelectedIndex = tableView.selectedRow
+            
+            let route = tableView.selectedRow == NonselectedIndex ? NonselectedRoute : routeList[tableView.selectedRow]
+            mainStore.dispatch(RouteListSelectAction(route: route, index: tableView.selectedRow))
         }
+        
+        updateSegmentedControl()
     }
 }
 

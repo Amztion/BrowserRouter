@@ -12,6 +12,8 @@ struct Route {
     let browser: Browser
     let wildcards: [Wildcard]
     
+    static let emptyList = [Route]()
+    
     init(browser: Browser, wildcards: [Wildcard]) {
         self.browser = browser
         self.wildcards = wildcards

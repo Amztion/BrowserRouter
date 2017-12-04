@@ -8,10 +8,6 @@
 
 import Foundation
 
-extension RouteManager {
-    static let allRoutes = Browser.all.map {Route(browser: $0, wildcards: [Wildcard]())}
-}
-
 extension Wildcard {
     static let sakWilcards = [Wildcard(url: "*sankuai.com*"), Wildcard(url: "*tapd.cn*"), Wildcard(url: "*dper.com*"), Wildcard(url: "*dianpingoa.com*"), Wildcard(url: "*neixin.cn*"), Wildcard(url: "*sankuai.info*")]
 }

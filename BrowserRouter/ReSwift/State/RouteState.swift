@@ -10,5 +10,5 @@ import ReSwift
 
 struct RouteState: StateType {
     let routes: [Route]
-    let selectedIndex: Int?
+    let selectedIndex: Int
 }

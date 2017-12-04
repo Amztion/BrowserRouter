@@ -9,16 +9,18 @@
 import Cocoa
 
 struct Wildcard {
-    private let url: String
-    let regex: Regex
-    let charactersMap = [
+    let url: String
+    private let regex: Regex
+    private let charactersMap = [
         "/": "\\/",
         ".": "\\.",
         "?": "\\?"
     ]
     
+    static let emptyList = [Wildcard]()
+    
     init?(url: String) {
-        print(url)
+        self.url = url
         
         var replacedUrl = url
         
@@ -30,8 +32,8 @@ struct Wildcard {
         
         replacedUrl = replacedUrl.replacingOccurrences(of: "*", with: "[^ ]*")
         
+        print(url)
         print(replacedUrl)
-        self.url = replacedUrl
         
         if let rege = Regex(pattern: replacedUrl) {
             self.regex = rege

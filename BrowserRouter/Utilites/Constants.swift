@@ -8,6 +8,12 @@
 
 import Cocoa
 
+let EmptyRouteList = [Route]()
+let EmptyWildcard = [Wildcard]()
+
+let NonselectedIndex = -1
+let NonselectedRoute = Route(browser: .default, wildcards: EmptyWildcard)
+
 extension URL {
     struct Scheme {
         static let http = "http"
@@ -30,6 +36,6 @@ extension RouteTableCellView {
 
 extension RouteContentListTableCellView {
     struct CellViewIdentifier {
-        static let RouteList = "RouteList"
+        static let RouteList = "RouteContent"
     }
 }

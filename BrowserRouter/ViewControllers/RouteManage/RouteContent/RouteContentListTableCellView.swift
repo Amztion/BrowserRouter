@@ -8,11 +8,17 @@
 
 import Cocoa
 
+struct RouteContentListItem {
+    let content: String
+}
+
 class RouteContentListTableCellView: NSTableCellView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
     }
     
-    
+    func set(item: RouteContentListItem) {
+        textField?.stringValue = item.content
+    }
 }
