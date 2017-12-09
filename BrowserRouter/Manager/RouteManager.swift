@@ -35,11 +35,13 @@ class RouteManager: NSObject {
     }
     
     func remove(_ route: Route) throws {
-        if let index = index(of: route) {
-            try remove(at: index)
-        } else {
+        guard let index = index(of: route) else {
             //TODO: Throws Error
+            print("index of route is nil")
+            return
         }
+        
+        try remove(at: index)
     }
     
     func remove(at index: Int) throws {

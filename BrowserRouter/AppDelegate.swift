@@ -29,9 +29,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension AppDelegate {
     @objc func handleURLEvent(_ event: NSAppleEventDescriptor, _ reply: NSAppleEventDescriptor) {
-        if let urlString = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue {
-            (RouteManager.shared.matched(with: urlString)?.browser ?? Browser.default).open(urlString)
+        guard let urlString = event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue else {
+            print("url string is nil")
+            return
         }
+        
+        (RouteManager.shared.matched(with: urlString)?.browser ?? Browser.default).open(urlString)
     }
     
     fileprivate func launchRouteManageWindowController() {

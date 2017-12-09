@@ -25,9 +25,11 @@ struct Wildcard {
         var replacedUrl = url
         
         for key in self.charactersMap.keys {
-            if let replacedChar = self.charactersMap[key] {
-                replacedUrl = replacedUrl.replacingOccurrences(of: key, with: replacedChar)
+            guard let replacedChar = self.charactersMap[key] else {
+                continue
             }
+            
+            replacedUrl = replacedUrl.replacingOccurrences(of: key, with: replacedChar)
         }
         
         replacedUrl = replacedUrl.replacingOccurrences(of: "*", with: "[^ ]*")
@@ -35,11 +37,11 @@ struct Wildcard {
         print(url)
         print(replacedUrl)
         
-        if let rege = Regex(pattern: replacedUrl) {
-            self.regex = rege
-        } else {
+        guard let rege = Regex(pattern: replacedUrl) else {
             return nil
         }
+        
+        regex = rege
     }
     
     func match(_ url: String) -> Bool {

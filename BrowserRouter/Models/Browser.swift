@@ -39,11 +39,13 @@ extension Browser {
         var browsers = [Browser]()
         for index in 0..<CFArrayGetCount(handlers) {
             let handlerIdentifier = unsafeBitCast(CFArrayGetValueAtIndex(handlers, index), to: CFString.self) as String
-            if let path = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: handlerIdentifier) {
-                if let bundle = Bundle(url: URL(fileURLWithPath: path)) {
-                    browsers.append(Browser(bundle: bundle, identifier: handlerIdentifier))
-                }
+            
+            guard let path = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: handlerIdentifier), let bundle = Bundle(url: URL(fileURLWithPath: path)) else {
+                print("path of budnle not found for handler identifier \(handlerIdentifier)")
+                continue
             }
+            
+            browsers.append(Browser(bundle: bundle, identifier: handlerIdentifier))
         }
         
         return browsers

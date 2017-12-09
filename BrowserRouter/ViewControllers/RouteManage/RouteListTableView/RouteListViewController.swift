@@ -34,15 +34,18 @@ class RouteListViewController: NSViewController {
     }
     
     @IBAction func segmentedSelectedChanged(_ sender: NSSegmentedControl) {
-        if let selectedIndex = SegmentedControlIndex(rawValue: sender.selectedSegment) {
-            switch selectedIndex {
-            case .add:
-                add()
-            case .remove:
-                remove()
-            }
-        } else {
+        guard let selectedIndex = SegmentedControlIndex(rawValue: sender.selectedSegment) else {
+            // TODO: Error
             print("error type")
+            
+            return
+        }
+        
+        switch selectedIndex {
+        case .add:
+            add()
+        case .remove:
+            remove()
         }
     }
 }

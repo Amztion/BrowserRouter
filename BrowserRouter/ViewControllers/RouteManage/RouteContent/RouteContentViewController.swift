@@ -21,8 +21,11 @@ class RouteContentViewController: NSViewController {
     private var currentRoute: Route?
     private var selectedIndex: Int! = NonselectedIndex
     
-    private var addingIndex: Int?
-    private var addingUrl = ""
+    private var addingIndex: Int? {
+        didSet {
+            updateSegementedControl()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +40,13 @@ class RouteContentViewController: NSViewController {
         browserSelectPopUpButton.removeAllItems()
         browserSelectPopUpButton.addItems(withTitles: Browser.all.map {$0.identifier})
         Browser.all.forEach { (browser) in
-            if let item = browserSelectPopUpButton.item(withTitle: browser.identifier) {
-                item.title = browser.name
-                item.image = browser.icon
+            guard let item = browserSelectPopUpButton.item(withTitle: browser.identifier) else {
+                print("browser pop up item with identifier \(browser.identifier) is nil")
+                return
             }
+            
+            item.title = browser.name
+            item.image = browser.icon
         }
     }
     
@@ -49,36 +55,52 @@ class RouteContentViewController: NSViewController {
     }
     
     @IBAction func browserSelectionDidChanged(_ sender: NSPopUpButton) {
-        if let selectedItem = sender.selectedItem {
-            if let index = sender.itemArray.index(of: selectedItem) {
-                if Browser.all.count > index {
-                    let selectedBrowser = Browser.all[index]
-                    
-                    let route = Route(browser: selectedBrowser, wildcards: currentRoute?.wildcards ?? EmptyWildcard)
-                    currentRoute = route
-                    
-                    mainStore.dispatch(RouteListModifyAction(route: route, index: selectedIndex))
-                } else {
-                    // TODO: Error Message
-                    print("Error message")
-                }
-            }
+        guard let selectedItem = sender.selectedItem, let index = sender.itemArray.index(of: selectedItem) else {
+            //TODO: Error
+            return
         }
+        
+        guard index < Browser.all.count else {
+            // TODO: Error Message
+            print("Error message")
+            return
+        }
+        
+        let selectedBrowser = Browser.all[index]
+        
+        let route = Route(browser: selectedBrowser, wildcards: currentRoute?.wildcards ?? EmptyWildcard)
+        currentRoute = route
+        
+        mainStore.dispatch(RouteListModifyAction(route: route, index: selectedIndex))
     }
     
     @IBAction func contentTextFieldDidChanged(_ sender: NSTextField) {
         let selected = tableView.selectedRow
-        print("row = \(selected), text = \(sender.stringValue)")
+        
+        guard selected != NonselectedIndex else {
+            print("nonselected index")
+            return
+        }
+        
+        if let addingIndex = addingIndex {
+            endAdding()
+        } else {
+            
+        }
     }
     
     @IBAction func segmentedControlClicked(_ sender: NSSegmentedControl) {
-        if let selectedIndex = SegmentedControlIndex(rawValue: sender.selectedSegment) {
-            switch selectedIndex {
-            case .add:
-                add()
-            case .remove:
-                remove()
-            }
+        guard let selectedIndex = SegmentedControlIndex(rawValue: sender.selectedSegment) else {
+            //TODO: Error
+            print("selected index error")
+            return
+        }
+        
+        switch selectedIndex {
+        case .add:
+            beginAdding()
+        case .remove:
+            remove()
         }
     }
 }
@@ -89,7 +111,7 @@ extension RouteContentViewController {
         segmentedControl.setEnabled(addingIndex == nil, forSegment: SegmentedControlIndex.add.rawValue)
     }
     
-    func add() {
+    func beginAdding() {
         guard let currentRoute = currentRoute else {
             return
         }
@@ -102,20 +124,60 @@ extension RouteContentViewController {
         tableView.insertRows(at: IndexSet(integer: addingIndex!), withAnimation: .effectGap)
     }
     
+    func endAdding() {
+        guard let addingIndex = addingIndex else {
+            print("adding index is nil")
+            return
+        }
+        
+        guard let currentRoute = currentRoute else {
+            print("current route is nil")
+            return
+        }
+        
+        guard let view = tableView.rowView(atRow: addingIndex, makeIfNecessary: false)?.view(atColumn: 0) as? RouteContentListTableCellView else {
+            print("adding view is nil")
+            return
+        }
+        
+        guard let text = view.textField?.stringValue else {
+            print("added text is nil")
+            return
+        }
+        
+        if text.count > 0 {
+            if let newWildCard = Wildcard(url: text) {
+                var wildcards = currentRoute.wildcards
+                wildcards.append(newWildCard)
+                
+                mainStore.dispatch(RouteListModifyAction(
+                    route: Route(browser: currentRoute.browser, wildcards: wildcards),
+                    index: selectedIndex
+                ))
+            }
+        }
+        
+        tableView.removeRows(at: IndexSet(integer: addingIndex), withAnimation: .effectFade)
+        self.addingIndex = nil
+    }
+    
     func remove() {
         guard let currentRoute = currentRoute else {
             return
         }
         
-        if tableView.selectedRow != NonselectedIndex {
-            var wildcards = currentRoute.wildcards
-            wildcards.remove(at: tableView.selectedRow)
-            
-            mainStore.dispatch(RouteListModifyAction(
-                route: Route(browser: currentRoute.browser, wildcards: wildcards),
-                index: tableView.selectedRow
-            ))
+        guard tableView.selectedRow > NonselectedIndex && tableView.selectedRow < currentRoute.wildcards.count else {
+            print("remove index error")
+            return
         }
+        
+        var wildcards = currentRoute.wildcards
+        wildcards.remove(at: tableView.selectedRow)
+        
+        mainStore.dispatch(RouteListModifyAction(
+            route: Route(browser: currentRoute.browser, wildcards: wildcards),
+            index: selectedIndex
+        ))
     }
 }
 
@@ -173,18 +235,29 @@ extension RouteContentViewController: NSTableViewDataSource {
             ) as? RouteContentListTableCellView
         
         view?.set(item: RouteContentListItem(
-            content: row < currentRoute.wildcards.count ? currentRoute.wildcards[row].url : "test"
+            content: row < currentRoute.wildcards.count ? currentRoute.wildcards[row].url : ""
         ))
-        
-        if row >= currentRoute.wildcards.count {
-            view?.textField?.selectText(nil)
-        }
         
         return view
     }
     
     func tableView(_ tableView: NSTableView, didAdd rowView: NSTableRowView, forRow row: Int) {
+        guard currentRoute != nil else {
+            return
+        }
         
+        guard let view = rowView.view(atColumn: 0) as? RouteContentListTableCellView else {
+            //TODO: Error
+            print("Didn't add")
+            
+            return
+        }
+        
+        if let addingIndex = addingIndex, row == addingIndex {
+            view.textField?.selectText(nil)
+            view.textField?.becomeFirstResponder()
+            tableView.selectRowIndexes(IndexSet(integer: row), byExtendingSelection: false)
+        }
     }
 }
 
