@@ -25,6 +25,10 @@
 		B3AEC9111FA1F61E002C8336 /* RouteManageSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AEC9101FA1F61E002C8336 /* RouteManageSplitViewController.swift */; };
 		B3B3DB761EE1C9DC0027210E /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3DB751EE1C9DC0027210E /* Browser.swift */; };
 		B3B8449E1FA74E6700C282B3 /* RouteContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B8449D1FA74E6700C282B3 /* RouteContentViewController.swift */; };
+		B3B9304620066077000A9E7B /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9304520066077000A9E7B /* RealmModels.swift */; };
+		B3B9304720066606000A9E7B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B9304920066606000A9E7B /* Realm.framework */; };
+		B3B9304820066606000A9E7B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B9304A20066606000A9E7B /* RealmSwift.framework */; };
+		B3B930542007B488000A9E7B /* RealmDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B930532007B488000A9E7B /* RealmDelegate.swift */; };
 		B3D730F51FA0AE310007605C /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D730F41FA0AE310007605C /* Route.swift */; };
 		B3D730F71FA0D7840007605C /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D730F61FA0D7840007605C /* RouteManager.swift */; };
 		B3EA60B21FAB43A700627B4B /* RouteListActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EA60B11FAB43A700627B4B /* RouteListActions.swift */; };
@@ -84,6 +88,10 @@
 		B3AEC9101FA1F61E002C8336 /* RouteManageSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManageSplitViewController.swift; sourceTree = "<group>"; };
 		B3B3DB751EE1C9DC0027210E /* Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
 		B3B8449D1FA74E6700C282B3 /* RouteContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContentViewController.swift; sourceTree = "<group>"; };
+		B3B9304520066077000A9E7B /* RealmModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModels.swift; sourceTree = "<group>"; };
+		B3B9304920066606000A9E7B /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B9304A20066606000A9E7B /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3B930532007B488000A9E7B /* RealmDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDelegate.swift; sourceTree = "<group>"; };
 		B3D730F41FA0AE310007605C /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B3D730F61FA0D7840007605C /* RouteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		B3EA60B11FAB43A700627B4B /* RouteListActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListActions.swift; sourceTree = "<group>"; };
@@ -101,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B9304720066606000A9E7B /* Realm.framework in Frameworks */,
+				B3B9304820066606000A9E7B /* RealmSwift.framework in Frameworks */,
 				B3EA60B31FAB443900627B4B /* ReSwift.framework in Frameworks */,
 				4DF971C239222AFF0653EF51 /* Pods_BrowserRouter.framework in Frameworks */,
 			);
@@ -128,6 +138,8 @@
 		2CAE2344F7DD6BD7F63DE3E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3B9304920066606000A9E7B /* Realm.framework */,
+				B3B9304A20066606000A9E7B /* RealmSwift.framework */,
 				B3EA60B41FAB443900627B4B /* ReSwift.framework */,
 				778D8DFAB59AB6A444E3337E /* Pods_BrowserRouter.framework */,
 				605474096A2410B132FB6948 /* Pods_BrowserRouterTests.framework */,
@@ -194,6 +206,7 @@
 				B398E2351ED7ED55002AD8AC /* BrowserRouter.entitlements */,
 				B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */,
 				B321E0921FA47D7300BA177C /* Mock.swift */,
+				B3B930402003C609000A9E7B /* Realm */,
 				B3EA60BD1FAB555500627B4B /* ReSwift */,
 				B3AEC90F1FA1F5E0002C8336 /* Manager */,
 				B3EA60AD1FAB413900627B4B /* Models */,
@@ -257,6 +270,15 @@
 				B3B8449D1FA74E6700C282B3 /* RouteContentViewController.swift */,
 			);
 			path = RouteContent;
+			sourceTree = "<group>";
+		};
+		B3B930402003C609000A9E7B /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				B3B9304520066077000A9E7B /* RealmModels.swift */,
+				B3B930532007B488000A9E7B /* RealmDelegate.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		B3EA60AD1FAB413900627B4B /* Models */ = {
@@ -615,9 +637,11 @@
 				B3829E881F065F2300C30211 /* Wildcard.swift in Sources */,
 				B3D730F71FA0D7840007605C /* RouteManager.swift in Sources */,
 				B321E0961FA5741600BA177C /* RouteTableCellView.swift in Sources */,
+				B3B9304620066077000A9E7B /* RealmModels.swift in Sources */,
 				B321E0911FA424AA00BA177C /* Constants.swift in Sources */,
 				B3EA60C31FABC5C300627B4B /* Store.swift in Sources */,
 				B321E08E1FA2FFA300BA177C /* RouteListViewController.swift in Sources */,
+				B3B930542007B488000A9E7B /* RealmDelegate.swift in Sources */,
 				B3EA60BB1FAB554200627B4B /* RouteState.swift in Sources */,
 				B374D0111FB3545F0093E5A8 /* RouteContentListTableCellView.swift in Sources */,
 				B3B8449E1FA74E6700C282B3 /* RouteContentViewController.swift in Sources */,

@@ -16,6 +16,18 @@ class RouteManager: NSObject {
     
     private var _routes = Route.emptyList
     
+    func load(completion:((Bool, [Route])->Void)?) {
+        RealmDelegate.shared.load { (success, routeModels) in
+            guard let completion = completion else {
+                return
+            }
+            
+//            completion(success, routeModels.map{return Route(model: $0)!})
+            self.add(chromeRoute)
+            completion(success, [chromeRoute])
+        }
+    }
+    
     func add(_ route: Route) {
         add(route, at: _routes.count)
     }
@@ -32,6 +44,7 @@ class RouteManager: NSObject {
         }
         
         _routes.insert(route, at: index)
+        RealmDelegate.shared.save(route: route, at: index)
     }
     
     func remove(_ route: Route) throws {

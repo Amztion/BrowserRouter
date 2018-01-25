@@ -10,8 +10,8 @@ import ReSwift
 
 let RouteReducer: Reducer<RouteState> = { action, state -> RouteState in
     switch action {
-    case let action as RouteListLoadAction:
-        return RouteListLoadActionReducer(action, state)
+    case let action as RouteListLoadedAction:
+        return RouteListLoadedActionReducer(action, state)
     case let action as RouteListRemoveAction:
         return RouteListRemoveActionReducer(action, state)
     case let action as RouteListAddAction:
@@ -25,8 +25,8 @@ let RouteReducer: Reducer<RouteState> = { action, state -> RouteState in
     }
 }
 
-fileprivate let RouteListLoadActionReducer: Reducer<RouteState> = { action, state -> RouteState in
-    let loadAction = action as! RouteListLoadAction
+fileprivate let RouteListLoadedActionReducer: Reducer<RouteState> = { action, state -> RouteState in
+    let loadAction = action as! RouteListLoadedAction
     
     return RouteState(routes: loadAction.routes , selectedIndex: NonselectedIndex)
 }

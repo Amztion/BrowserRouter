@@ -9,22 +9,20 @@
 import Cocoa
 
 struct Route {
+    let identifier: UUID
     let browser: Browser
     let wildcards: [Wildcard]
     
     static let emptyList = [Route]()
     
     init(browser: Browser, wildcards: [Wildcard]) {
+        identifier = UUID()
         self.browser = browser
         self.wildcards = wildcards
     }
     
     func match(_ url: String) -> Bool {
         return self.wildcards.filter {$0.match(url)}.count > 0
-    }
-    
-    var identifier: String {
-        return browser.identifier
     }
 }
 

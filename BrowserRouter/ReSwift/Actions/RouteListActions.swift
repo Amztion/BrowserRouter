@@ -8,7 +8,11 @@
 
 import ReSwift
 
-struct RouteListLoadAction: Action {
+struct RouteListLoadingAction: Action {
+    
+}
+
+struct RouteListLoadedAction: Action {
     var routes: [Route]
 }
 

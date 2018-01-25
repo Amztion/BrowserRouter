@@ -18,7 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(handleURLEvent(_:_:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         
         NSApplication.shared.setActivationPolicy(.accessory)
-        RouteManager.shared.add(chromeRoute)
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {

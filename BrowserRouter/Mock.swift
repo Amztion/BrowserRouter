@@ -9,8 +9,7 @@
 import Foundation
 
 extension Wildcard {
-    static let sakWilcards = [Wildcard(url: "*sankuai.com*"), Wildcard(url: "*tapd.cn*"), Wildcard(url: "*dper.com*"), Wildcard(url: "*dianpingoa.com*"), Wildcard(url: "*neixin.cn*"), Wildcard(url: "*sankuai.info*")]
+    static let sakWilcards = [Wildcard(url: "*sankuai.com*"), Wildcard(url: "*tapd.cn*"), Wildcard(url: "*dper.com*"), Wildcard(url: "*dianpingoa.com*"), Wildcard(url: "*neixin.cn*"), Wildcard(url: "*sankuai.info*"), Wildcard(url: "*dper.com*")]
 }
 
 let chromeRoute = Route(browser: Browser.chrome!, wildcards: Wildcard.sakWilcards as! [Wildcard])
-

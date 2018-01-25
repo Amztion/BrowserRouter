@@ -15,7 +15,11 @@ let RouteManagerMiddleware: Middleware<RouteState> = { dispatch, getState in
             
             if let state = getState() {
                 switch action {
-                case let action as RouteListLoadAction:
+                case let action as RouteListLoadingAction:
+                    RouteManager.shared.load(completion: { (success, routes) in
+                        dispatch(RouteListLoadedAction(routes: routes))
+                    })
+                case let action as RouteListLoadedAction:
                     handledAction = RouteManager.shared.handle(action)
                 case let action as RouteListRemoveAction:
                     handledAction = RouteManager.shared.handle(action)
@@ -36,9 +40,8 @@ let RouteManagerMiddleware: Middleware<RouteState> = { dispatch, getState in
 }
 
 extension RouteManager {
-    func handle(_ loadAction: RouteListLoadAction) -> RouteListLoadAction {
-        // TODO: Read from database
-        return RouteListLoadAction(routes: RouteManager.shared.routes)
+    func handle(_ loadAction: RouteListLoadedAction) -> RouteListLoadedAction {
+        return RouteListLoadedAction(routes: RouteManager.shared.routes)
     }
     
     func handle(_ removeAction: RouteListRemoveAction) -> RouteListRemoveAction {

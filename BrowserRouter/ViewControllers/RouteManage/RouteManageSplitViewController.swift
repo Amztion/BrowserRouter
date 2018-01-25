@@ -15,7 +15,7 @@ class RouteManageSplitViewController: NSSplitViewController {
         
         configSplitView()
         
-        mainStore.dispatch(RouteListLoadAction(routes: EmptyRouteList))
+        mainStore.dispatch(RouteListLoadingAction())
     }
     
     fileprivate func configSplitView() {

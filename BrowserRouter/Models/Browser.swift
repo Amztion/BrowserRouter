@@ -51,10 +51,14 @@ extension Browser {
         return browsers
     }()
     
+    public static func browser(identifier: String) -> Browser? {
+        return self.all.filter{return $0.identifier == identifier}.first
+    }
+    
     public static var `default`: Browser = safari ?? all.first! // Set Safari or the first one as default if there's no user setting.
 }
 
 extension Browser {
-    public static var safari = all.filter {$0.identifier == Identifier.safari}.first
-    public static var chrome = all.filter {$0.identifier == Identifier.chrome}.first
+    public static var safari = browser(identifier: Identifier.safari)
+    public static var chrome = browser(identifier: Identifier.chrome)
 }
