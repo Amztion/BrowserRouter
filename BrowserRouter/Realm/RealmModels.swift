@@ -13,7 +13,7 @@ import Realm
 class WildcardModel: Object {
     @objc dynamic var url: String!
     
-    init(wildcard: Wildcard) {
+    init(wildcard: Pattern) {
         url = wildcard.url
         
         super.init()
@@ -75,11 +75,11 @@ extension Route {
         
         self.identifier = uuid
         self.browser = Browser.browser(identifier: model.browserIdentifier) ?? Browser.default
-        self.wildcards = model.wildcards.map{Wildcard(model: $0)!}
+        self.wildcards = model.wildcards.map{Pattern(model: $0)!}
     }
 }
 
-extension Wildcard {
+extension Pattern {
     init?(model: WildcardModel) {
         self.init(url: model.url)
     }

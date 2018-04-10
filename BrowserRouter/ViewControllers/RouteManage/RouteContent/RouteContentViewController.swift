@@ -146,7 +146,7 @@ extension RouteContentViewController {
         }
         
         if text.count > 0 {
-            if let newWildCard = Wildcard(url: text) {
+            if let newWildCard = Pattern(url: text) {
                 var wildcards = currentRoute.wildcards
                 wildcards.append(newWildCard)
                 

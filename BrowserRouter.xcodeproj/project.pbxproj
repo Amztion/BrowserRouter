@@ -16,7 +16,7 @@
 		B374D0111FB3545F0093E5A8 /* RouteContentListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374D0101FB3545F0093E5A8 /* RouteContentListTableCellView.swift */; };
 		B374D0131FB6C8D20093E5A8 /* RouteManagerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374D0121FB6C8D20093E5A8 /* RouteManagerMiddleware.swift */; };
 		B3829E861F05FEE500C30211 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3829E851F05FEE500C30211 /* Regex.swift */; };
-		B3829E881F065F2300C30211 /* Wildcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3829E871F065F2300C30211 /* Wildcard.swift */; };
+		B3829E881F065F2300C30211 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3829E871F065F2300C30211 /* Pattern.swift */; };
 		B398E20B1ED7EB9C002AD8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */; };
 		B398E20F1ED7EB9C002AD8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */; };
 		B398E2121ED7EB9C002AD8AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B398E2101ED7EB9C002AD8AC /* Main.storyboard */; };
@@ -72,7 +72,7 @@
 		B374D0101FB3545F0093E5A8 /* RouteContentListTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContentListTableCellView.swift; sourceTree = "<group>"; };
 		B374D0121FB6C8D20093E5A8 /* RouteManagerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManagerMiddleware.swift; sourceTree = "<group>"; };
 		B3829E851F05FEE500C30211 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		B3829E871F065F2300C30211 /* Wildcard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wildcard.swift; sourceTree = "<group>"; };
+		B3829E871F065F2300C30211 /* Pattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
 		B398E2071ED7EB9C002AD8AC /* BrowserRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowserRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B398E20A1ED7EB9C002AD8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B398E20E1ED7EB9C002AD8AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -286,7 +286,7 @@
 			children = (
 				B3B3DB751EE1C9DC0027210E /* Browser.swift */,
 				B3829E851F05FEE500C30211 /* Regex.swift */,
-				B3829E871F065F2300C30211 /* Wildcard.swift */,
+				B3829E871F065F2300C30211 /* Pattern.swift */,
 				B3D730F41FA0AE310007605C /* Route.swift */,
 			);
 			path = Models;
@@ -634,7 +634,7 @@
 				B3EA60B81FAB4DCD00627B4B /* RouteReducer.swift in Sources */,
 				B3EA60B21FAB43A700627B4B /* RouteListActions.swift in Sources */,
 				B3AEC9111FA1F61E002C8336 /* RouteManageSplitViewController.swift in Sources */,
-				B3829E881F065F2300C30211 /* Wildcard.swift in Sources */,
+				B3829E881F065F2300C30211 /* Pattern.swift in Sources */,
 				B3D730F71FA0D7840007605C /* RouteManager.swift in Sources */,
 				B321E0961FA5741600BA177C /* RouteTableCellView.swift in Sources */,
 				B3B9304620066077000A9E7B /* RealmModels.swift in Sources */,

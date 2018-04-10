@@ -8,7 +8,7 @@
 
 import Cocoa
 
-struct Wildcard {
+struct Pattern {
     let url: String
     private let regex: Regex
     private let charactersMap = [
@@ -17,7 +17,7 @@ struct Wildcard {
         "?": "\\?"
     ]
     
-    static let emptyList = [Wildcard]()
+    static let emptyList = [Pattern]()
     
     init?(url: String) {
         self.url = url

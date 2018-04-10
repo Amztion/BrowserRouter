@@ -11,11 +11,11 @@ import Cocoa
 struct Route {
     let identifier: UUID
     let browser: Browser
-    let wildcards: [Wildcard]
+    let wildcards: [Pattern]
     
     static let emptyList = [Route]()
     
-    init(browser: Browser, wildcards: [Wildcard]) {
+    init(browser: Browser, wildcards: [Pattern]) {
         identifier = UUID()
         self.browser = browser
         self.wildcards = wildcards

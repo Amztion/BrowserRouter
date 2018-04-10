@@ -9,7 +9,7 @@
 import Cocoa
 
 let EmptyRouteList = [Route]()
-let EmptyWildcard = [Wildcard]()
+let EmptyWildcard = [Pattern]()
 
 let NonselectedIndex = -1
 let NonselectedRoute = Route(browser: .default, wildcards: EmptyWildcard)
