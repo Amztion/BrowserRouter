@@ -135,7 +135,7 @@ extension RouteContentViewController {
             return
         }
         
-        guard let view = tableView.rowView(atRow: addingIndex, makeIfNecessary: false)?.view(atColumn: 0) as? RouteContentListTableCellView else {
+        guard let view = tableView.rowView(atRow: addingIndex, makeIfNecessary: false)?.view(atColumn: 0) as? RouteContentTableCellView else {
             print("adding view is nil")
             return
         }
@@ -229,10 +229,10 @@ extension RouteContentViewController: NSTableViewDataSource {
         
         let view = tableView.makeView(
             withIdentifier: NSUserInterfaceItemIdentifier(
-                rawValue: RouteContentListTableCellView.CellViewIdentifier.RouteList
+                rawValue: RouteContentTableCellView.CellViewIdentifier.RouteList
             ),
             owner: self
-            ) as? RouteContentListTableCellView
+            ) as? RouteContentTableCellView
         
         view?.set(item: RouteContentListItem(
             content: row < currentRoute.wildcards.count ? currentRoute.wildcards[row].url : ""
@@ -246,7 +246,7 @@ extension RouteContentViewController: NSTableViewDataSource {
             return
         }
         
-        guard let view = rowView.view(atColumn: 0) as? RouteContentListTableCellView else {
+        guard let view = rowView.view(atColumn: 0) as? RouteContentTableCellView else {
             //TODO: Error
             print("Didn't add")
             

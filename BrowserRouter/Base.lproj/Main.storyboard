@@ -665,7 +665,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="RouteManageWindowController" showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="BrowserRouterPosition" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="BrowserRouterPosition" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="670" height="490"/>
@@ -759,7 +759,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="RouteList" id="CXo-8F-r2n" customClass="RouteTableCellView" customModule="BrowserRouter" customModuleProvider="target">
+                                                        <tableCellView identifier="RouteList" id="CXo-8F-r2n" customClass="RouteListTableCellView" customModule="BrowserRouter" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="175" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -830,7 +830,7 @@
                 </viewController>
                 <customObject id="0re-rD-pJI" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="670" y="815"/>
+            <point key="canvasLocation" x="516" y="815"/>
         </scene>
         <!--Route Content View Controller-->
         <scene sceneID="by5-xJ-1k4">
@@ -891,7 +891,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="RouteContent" id="JCd-6P-2yy" customClass="RouteContentListTableCellView" customModule="BrowserRouter" customModuleProvider="target">
+                                                        <tableCellView identifier="RouteContent" id="JCd-6P-2yy" customClass="RouteContentTableCellView" customModule="BrowserRouter" customModuleProvider="target">
                                                             <rect key="frame" x="1" y="1" width="255" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>

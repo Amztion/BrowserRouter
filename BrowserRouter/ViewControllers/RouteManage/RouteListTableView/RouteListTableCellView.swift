@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class RouteTableCellView: NSTableCellView {
+class RouteListTableCellView: NSTableCellView {
     
     func set(item: RouteTableItem) {
         imageView?.image = item.image

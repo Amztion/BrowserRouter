@@ -8,7 +8,9 @@
 
 import ReSwift
 
+
 class RouteListViewController: NSViewController {
+
     private enum SegmentedControlIndex: Int {
         case add
         case remove
@@ -19,7 +21,7 @@ class RouteListViewController: NSViewController {
     
     private var routeList = Route.emptyList
     
-    private var previoudSelectedIndex: Int?
+    private var selectedIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,12 +85,12 @@ extension RouteListViewController: StoreSubscriber {
 
 extension RouteListViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-            return 50
+        return 50
     }
     
     func tableViewSelectionDidChange(_ notification: Notification) {
-        if previoudSelectedIndex != tableView.selectedRow {
-            previoudSelectedIndex = tableView.selectedRow
+        if selectedIndex != tableView.selectedRow {
+            selectedIndex = tableView.selectedRow
             
             let route = tableView.selectedRow == NonselectedIndex ? NonselectedRoute : routeList[tableView.selectedRow]
             mainStore.dispatch(RouteListSelectAction(route: route, index: tableView.selectedRow))
@@ -104,7 +106,7 @@ extension RouteListViewController: NSTableViewDataSource {
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: RouteTableCellView.CellViewIdentifier.RouteList), owner: self) as? RouteTableCellView
+        let view = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: RouteListTableCellView.CellViewIdentifier.RouteList), owner: self) as? RouteListTableCellView
         view?.set(item: RouteTableItem(route: routeList[row]))
         
         return view

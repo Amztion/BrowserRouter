@@ -17,7 +17,9 @@ let RouteManagerMiddleware: Middleware<RouteState> = { dispatch, getState in
                 switch action {
                 case let action as RouteListLoadingAction:
                     RouteManager.shared.load(completion: { (success, routes) in
-                        dispatch(RouteListLoadedAction(routes: routes))
+                        DispatchQueue.main.async {
+                            dispatch(RouteListLoadedAction(routes: routes))
+                        }
                     })
                 case let action as RouteListLoadedAction:
                     handledAction = RouteManager.shared.handle(action)

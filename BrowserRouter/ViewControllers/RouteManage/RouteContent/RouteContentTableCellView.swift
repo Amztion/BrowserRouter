@@ -12,7 +12,7 @@ struct RouteContentListItem {
     let content: String
 }
 
-class RouteContentListTableCellView: NSTableCellView {
+class RouteContentTableCellView: NSTableCellView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)

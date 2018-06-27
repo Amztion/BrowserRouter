@@ -28,13 +28,13 @@ extension Browser {
     }
 }
 
-extension RouteTableCellView {
+extension RouteListTableCellView {
     struct CellViewIdentifier {
         static let RouteList = "RouteList"
     }
 }
 
-extension RouteContentListTableCellView {
+extension RouteContentTableCellView {
     struct CellViewIdentifier {
         static let RouteList = "RouteContent"
     }

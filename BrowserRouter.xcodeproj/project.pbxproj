@@ -12,8 +12,8 @@
 		B321E08E1FA2FFA300BA177C /* RouteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321E08D1FA2FFA300BA177C /* RouteListViewController.swift */; };
 		B321E0911FA424AA00BA177C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321E0901FA424AA00BA177C /* Constants.swift */; };
 		B321E0931FA47D7300BA177C /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321E0921FA47D7300BA177C /* Mock.swift */; };
-		B321E0961FA5741600BA177C /* RouteTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321E0951FA5741600BA177C /* RouteTableCellView.swift */; };
-		B374D0111FB3545F0093E5A8 /* RouteContentListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374D0101FB3545F0093E5A8 /* RouteContentListTableCellView.swift */; };
+		B321E0961FA5741600BA177C /* RouteListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321E0951FA5741600BA177C /* RouteListTableCellView.swift */; };
+		B374D0111FB3545F0093E5A8 /* RouteContentTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374D0101FB3545F0093E5A8 /* RouteContentTableCellView.swift */; };
 		B374D0131FB6C8D20093E5A8 /* RouteManagerMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374D0121FB6C8D20093E5A8 /* RouteManagerMiddleware.swift */; };
 		B3829E861F05FEE500C30211 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3829E851F05FEE500C30211 /* Regex.swift */; };
 		B3829E881F065F2300C30211 /* Pattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3829E871F065F2300C30211 /* Pattern.swift */; };
@@ -68,8 +68,8 @@
 		B321E08D1FA2FFA300BA177C /* RouteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListViewController.swift; sourceTree = "<group>"; };
 		B321E0901FA424AA00BA177C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B321E0921FA47D7300BA177C /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
-		B321E0951FA5741600BA177C /* RouteTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTableCellView.swift; sourceTree = "<group>"; };
-		B374D0101FB3545F0093E5A8 /* RouteContentListTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContentListTableCellView.swift; sourceTree = "<group>"; };
+		B321E0951FA5741600BA177C /* RouteListTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteListTableCellView.swift; sourceTree = "<group>"; };
+		B374D0101FB3545F0093E5A8 /* RouteContentTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContentTableCellView.swift; sourceTree = "<group>"; };
 		B374D0121FB6C8D20093E5A8 /* RouteManagerMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteManagerMiddleware.swift; sourceTree = "<group>"; };
 		B3829E851F05FEE500C30211 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
 		B3829E871F065F2300C30211 /* Pattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pattern.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 		B321E0941FA573AD00BA177C /* RouteListTableView */ = {
 			isa = PBXGroup;
 			children = (
-				B321E0951FA5741600BA177C /* RouteTableCellView.swift */,
+				B321E0951FA5741600BA177C /* RouteListTableCellView.swift */,
 				B321E08D1FA2FFA300BA177C /* RouteListViewController.swift */,
 			);
 			path = RouteListTableView;
@@ -266,7 +266,7 @@
 		B3B8449F1FA74E6F00C282B3 /* RouteContent */ = {
 			isa = PBXGroup;
 			children = (
-				B374D0101FB3545F0093E5A8 /* RouteContentListTableCellView.swift */,
+				B374D0101FB3545F0093E5A8 /* RouteContentTableCellView.swift */,
 				B3B8449D1FA74E6700C282B3 /* RouteContentViewController.swift */,
 			);
 			path = RouteContent;
@@ -636,14 +636,14 @@
 				B3AEC9111FA1F61E002C8336 /* RouteManageSplitViewController.swift in Sources */,
 				B3829E881F065F2300C30211 /* Pattern.swift in Sources */,
 				B3D730F71FA0D7840007605C /* RouteManager.swift in Sources */,
-				B321E0961FA5741600BA177C /* RouteTableCellView.swift in Sources */,
+				B321E0961FA5741600BA177C /* RouteListTableCellView.swift in Sources */,
 				B3B9304620066077000A9E7B /* RealmModels.swift in Sources */,
 				B321E0911FA424AA00BA177C /* Constants.swift in Sources */,
 				B3EA60C31FABC5C300627B4B /* Store.swift in Sources */,
 				B321E08E1FA2FFA300BA177C /* RouteListViewController.swift in Sources */,
 				B3B930542007B488000A9E7B /* RealmDelegate.swift in Sources */,
 				B3EA60BB1FAB554200627B4B /* RouteState.swift in Sources */,
-				B374D0111FB3545F0093E5A8 /* RouteContentListTableCellView.swift in Sources */,
+				B374D0111FB3545F0093E5A8 /* RouteContentTableCellView.swift in Sources */,
 				B3B8449E1FA74E6700C282B3 /* RouteContentViewController.swift in Sources */,
 				B3829E861F05FEE500C30211 /* Regex.swift in Sources */,
 				B398E20B1ED7EB9C002AD8AC /* AppDelegate.swift in Sources */,

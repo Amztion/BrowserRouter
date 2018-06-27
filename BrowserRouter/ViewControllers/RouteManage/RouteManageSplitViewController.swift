@@ -9,6 +9,14 @@
 import Cocoa
 
 class RouteManageSplitViewController: NSSplitViewController {
+    
+    var listViewController: RouteListViewController? {
+        return self.splitViewItems.first?.viewController as? RouteListViewController
+    }
+    
+    var contentViewController: RouteContentViewController? {
+        return self.splitViewItems.last?.viewController as? RouteContentViewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

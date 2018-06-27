@@ -68,12 +68,13 @@ class RouteModel: Object {
 }
 
 extension Route {
-    init?(model: RouteModel) {
-        guard let uuid = UUID(uuidString: model.identifier) else {
-            return nil
+    init(model: RouteModel) {
+        if let uuid = UUID(uuidString: model.identifier) {
+            self.identifier = uuid
+        } else {
+            self.identifier = UUID()
         }
         
-        self.identifier = uuid
         self.browser = Browser.browser(identifier: model.browserIdentifier) ?? Browser.default
         self.wildcards = model.wildcards.map{Pattern(model: $0)!}
     }

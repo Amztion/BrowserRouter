@@ -22,9 +22,11 @@ class RouteManager: NSObject {
                 return
             }
             
-//            completion(success, routeModels.map{return Route(model: $0)!})
-            self.add(chromeRoute)
-            completion(success, [chromeRoute])
+            self._routes = routeModels.map({ (routeModel) -> Route in
+                return Route(model: routeModel)
+            })
+            
+            completion(success, self._routes)
         }
     }
     
@@ -63,6 +65,7 @@ class RouteManager: NSObject {
             return
         }
         
+        RealmDelegate.shared.remove(route: _routes[index])
         _routes.remove(at: index)
     }
     

@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension Wildcard {
-    static let sakWilcards = [Wildcard(url: "*sankuai.com*"), Wildcard(url: "*tapd.cn*"), Wildcard(url: "*dper.com*"), Wildcard(url: "*dianpingoa.com*"), Wildcard(url: "*neixin.cn*"), Wildcard(url: "*sankuai.info*"), Wildcard(url: "*dper.com*")]
+extension Pattern {
+    static let sakWilcards = [Pattern(url: "*sankuai.com*"), Pattern(url: "*tapd.cn*"), Pattern(url: "*dper.com*"), Pattern(url: "*dianpingoa.com*"), Pattern(url: "*neixin.cn*"), Pattern(url: "*sankuai.info*"), Pattern(url: "*dper.com*")]
 }
 
-let chromeRoute = Route(browser: Browser.chrome!, wildcards: Wildcard.sakWilcards as! [Wildcard])
+let chromeRoute = Route(browser: Browser.chrome!, wildcards: Pattern.sakWilcards as! [Pattern])

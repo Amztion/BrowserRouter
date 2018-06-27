@@ -49,6 +49,18 @@ class RealmDelegate {
         }
     }
     
+    func remove(route: Route) {
+        databaseQueue.async {
+            let realm = try? Realm()
+            try! realm?.write {
+                if let model = realm?.objects(RouteModel.self).filter("identifier=%@", RouteModel(route: route).identifier).first {
+                    realm?.delete(model.wildcards)
+                    realm?.delete(model)
+                }
+            }
+        }
+    }
+    
     func fetchRoute() {
         
     }
