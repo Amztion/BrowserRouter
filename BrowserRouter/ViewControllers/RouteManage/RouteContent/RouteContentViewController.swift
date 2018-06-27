@@ -68,7 +68,7 @@ class RouteContentViewController: NSViewController {
         
         let selectedBrowser = Browser.all[index]
         
-        let route = Route(browser: selectedBrowser, wildcards: currentRoute?.wildcards ?? EmptyWildcard)
+        let route = Route(browser: selectedBrowser, pattern: currentRoute?.patterns ?? EmptyPattern)
         currentRoute = route
         
         mainStore.dispatch(RouteListModifyAction(route: route, index: selectedIndex))
@@ -120,7 +120,7 @@ extension RouteContentViewController {
             return
         }
         
-        addingIndex = currentRoute.wildcards.count
+        addingIndex = currentRoute.patterns.count
         tableView.insertRows(at: IndexSet(integer: addingIndex!), withAnimation: .effectGap)
     }
     
@@ -146,12 +146,12 @@ extension RouteContentViewController {
         }
         
         if text.count > 0 {
-            if let newWildCard = Pattern(url: text) {
-                var wildcards = currentRoute.wildcards
-                wildcards.append(newWildCard)
+            if let newPattern = Pattern(url: text) {
+                var patterns = currentRoute.patterns
+                patterns.append(newPattern)
                 
                 mainStore.dispatch(RouteListModifyAction(
-                    route: Route(browser: currentRoute.browser, wildcards: wildcards),
+                    route: Route(browser: currentRoute.browser, pattern: patterns),
                     index: selectedIndex
                 ))
             }
@@ -166,16 +166,16 @@ extension RouteContentViewController {
             return
         }
         
-        guard tableView.selectedRow > NonselectedIndex && tableView.selectedRow < currentRoute.wildcards.count else {
+        guard tableView.selectedRow > NonselectedIndex && tableView.selectedRow < currentRoute.patterns.count else {
             print("remove index error")
             return
         }
         
-        var wildcards = currentRoute.wildcards
-        wildcards.remove(at: tableView.selectedRow)
+        var patterns = currentRoute.patterns
+        patterns.remove(at: tableView.selectedRow)
         
         mainStore.dispatch(RouteListModifyAction(
-            route: Route(browser: currentRoute.browser, wildcards: wildcards),
+            route: Route(browser: currentRoute.browser, pattern: patterns),
             index: selectedIndex
         ))
     }
@@ -219,7 +219,7 @@ extension RouteContentViewController: NSTableViewDataSource {
             return 0
         }
         
-        return currentRoute.wildcards.count + (addingIndex == nil ? 0 : 1)
+        return currentRoute.patterns.count + (addingIndex == nil ? 0 : 1)
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -235,7 +235,7 @@ extension RouteContentViewController: NSTableViewDataSource {
             ) as? RouteContentTableCellView
         
         view?.set(item: RouteContentListItem(
-            content: row < currentRoute.wildcards.count ? currentRoute.wildcards[row].url : ""
+            content: row < currentRoute.patterns.count ? currentRoute.patterns[row].url : ""
         ))
         
         return view

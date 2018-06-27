@@ -9,10 +9,10 @@
 import Cocoa
 
 let EmptyRouteList = [Route]()
-let EmptyWildcard = [Pattern]()
+let EmptyPattern = [Pattern]()
 
 let NonselectedIndex = -1
-let NonselectedRoute = Route(browser: .default, wildcards: EmptyWildcard)
+let NonselectedRoute = Route(browser: .default, pattern: EmptyPattern)
 
 extension URL {
     struct Scheme {

@@ -12,4 +12,4 @@ extension Pattern {
     static let sakWilcards = [Pattern(url: "*sankuai.com*"), Pattern(url: "*tapd.cn*"), Pattern(url: "*dper.com*"), Pattern(url: "*dianpingoa.com*"), Pattern(url: "*neixin.cn*"), Pattern(url: "*sankuai.info*"), Pattern(url: "*dper.com*")]
 }
 
-let chromeRoute = Route(browser: Browser.chrome!, wildcards: Pattern.sakWilcards as! [Pattern])
+let chromeRoute = Route(browser: Browser.chrome!, pattern: Pattern.sakWilcards as! [Pattern])

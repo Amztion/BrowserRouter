@@ -11,18 +11,18 @@ import Cocoa
 struct Route {
     let identifier: UUID
     let browser: Browser
-    let wildcards: [Pattern]
+    let patterns: [Pattern]
     
     static let emptyList = [Route]()
     
-    init(browser: Browser, wildcards: [Pattern]) {
+    init(browser: Browser, pattern: [Pattern]) {
         identifier = UUID()
         self.browser = browser
-        self.wildcards = wildcards
+        self.patterns = pattern
     }
     
     func match(_ url: String) -> Bool {
-        return self.wildcards.filter {$0.match(url)}.count > 0
+        return self.patterns.filter {$0.match(url)}.count > 0
     }
 }
 

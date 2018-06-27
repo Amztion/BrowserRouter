@@ -10,11 +10,11 @@ import Cocoa
 import RealmSwift
 import Realm
 
-class WildcardModel: Object {
+class PatternModel: Object {
     @objc dynamic var url: String!
     
-    init(wildcard: Pattern) {
-        url = wildcard.url
+    init(pattern: Pattern) {
+        url = pattern.url
         
         super.init()
     }
@@ -36,13 +36,13 @@ class RouteModel: Object {
     @objc dynamic var identifier: String!
     @objc dynamic var browserIdentifier: String!
     
-    let wildcards = List<WildcardModel>()
+    let patterns = List<PatternModel>()
     
     init(route: Route) {
         identifier = route.identifier.uuidString
-        wildcards.append(objectsIn:
-            route.wildcards.map{
-                return WildcardModel(wildcard: $0)
+        patterns.append(objectsIn:
+            route.patterns.map{
+                return PatternModel(pattern: $0)
             }
         )
         browserIdentifier = route.browser.identifier
@@ -76,12 +76,12 @@ extension Route {
         }
         
         self.browser = Browser.browser(identifier: model.browserIdentifier) ?? Browser.default
-        self.wildcards = model.wildcards.map{Pattern(model: $0)!}
+        self.patterns = model.patterns.map{Pattern(model: $0)!}
     }
 }
 
 extension Pattern {
-    init?(model: WildcardModel) {
+    init?(model: PatternModel) {
         self.init(url: model.url)
     }
 }

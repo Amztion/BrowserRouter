@@ -58,7 +58,7 @@ extension RouteListViewController {
     }
     
     func add() {
-        mainStore.dispatch(RouteListAddAction(route: Route(browser: Browser.all.first!, wildcards: EmptyWildcard)))
+        mainStore.dispatch(RouteListAddAction(route: Route(browser: Browser.all.first!, pattern: EmptyPattern)))
     }
     
     func remove() {

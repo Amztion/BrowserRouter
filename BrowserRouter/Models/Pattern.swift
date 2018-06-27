@@ -1,5 +1,5 @@
 //
-//  Wildcard.swift
+//  Pattern.swift
 //  BrowserRouter
 //
 //  Created by Liang Zhao on 2017/6/30.
